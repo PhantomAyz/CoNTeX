@@ -7,6 +7,7 @@
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
+    <!-- Navigation bar -->
     <div class="navbar">
       <a class="navbar-logo" href="#">CoNTeX</a>   
       <div class="navbar-collapse">
@@ -18,15 +19,16 @@
             <a class="navbar-link" href="#">About</a>
           </li>
         </ul>
-      </div>
       <div class="navbar-account">
         <a class="navbar-account-name" href="#">User</a>   
         <a class="navbar-account-picture" href="#">
           <img class="navbar-profile" src="./images/account.png" alt="image">
         </a>   
       </div>
+      </div>
     </div>
     
+    <!-- Editor and previewer for LaTeX and Markdown -->
     <div class="main">
       <div class="half-width" id="main-editor">
         <!-- Get default mesage on screen -->
@@ -49,5 +51,8 @@
         </div>
       </div>
     </div>
+
+    <!-- JavaScript for rendering Markdown content -->
+    <script src="./scripts/markdown-parser.js"></script>
   </body>
 </html>
