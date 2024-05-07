@@ -29,8 +29,8 @@ function markdownToHtml(markdownText) {
         .replace(/- (.*)\n/g, '<li>$1</li>') // Unordered list
         .replace(/\n/g, '<br>') // Line break
         .replace(/> (.*?)\n/g, '<blockquote>$1</blockquote>') // Blockquote
-        .replace(/\[([^\[]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>') // Link
-        .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1">'); // Image
+        .replace(/!\[(.*?)\]\((.*?)\)/g, '<img src="$2" alt="$1" width="100%">') // Image
+        .replace(/\[([^\[]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>'); // Link
 }
 
 // Render Markdown content on page load
