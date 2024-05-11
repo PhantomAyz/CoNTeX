@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <title>CoNTeX: Collaborative Note-taking in Markdown & LaTeX</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/fonts.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <!-- Navigation bar -->
-    <div class="navbar">
-      <a class="navbar-logo" href="#">CoNTeX</a>   
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <a class="navbar-logo-link" href="#">
+          <img id="navbar-logo-img" src="./images/white-logo.svg" alt="CoNTeX">
+        </a>   
+      </div>
       <div class="navbar-collapse">
         <ul class="navbar-nav">
           <li class="navbar-item">
@@ -19,14 +24,14 @@
             <a class="navbar-link" href="#">About</a>
           </li>
         </ul>
-      <div class="navbar-account">
-        <a class="navbar-account-name" href="#">User</a>   
-        <a class="navbar-account-picture" href="#">
-          <img class="navbar-profile" src="./images/account.png" alt="image">
-        </a>   
+        <div class="navbar-account">
+          <a class="navbar-account-name" href="#">User</a>   
+          <a class="navbar-account-picture" href="#">
+            <img class="navbar-profile" src="./images/account.png" alt="image">
+          </a>   
+        </div>
       </div>
-      </div>
-    </div>
+    </nav>
     
     <!-- Editor and previewer for LaTeX and Markdown -->
     <div class="main">
@@ -43,7 +48,6 @@
         <textarea id="source-text" placeholder="Enter your text here"><?php 
           echo htmlspecialchars($file_contents); 
         ?></textarea>
-
       </div>
       <div class="half-width" id="main-preview">
         <div id="render-text">
