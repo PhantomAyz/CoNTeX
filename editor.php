@@ -10,22 +10,27 @@
   <body>
     <!-- Navigation bar -->
     <nav class="navbar">
+      <div class="navbar-tools">
+        <button class="nb-btn" type="button">
+          <img class="nb-tl-svg" src="images/folder-solid.svg" alt="">
+        </button>
+        <button class="nb-btn" type="button">
+          <img class="nb-tl-svg" src="images/rotate-left-solid.svg" alt="">
+        </button>
+        <button class="nb-btn" type="button">
+          <img class="nb-tl-svg" src="images/rotate-right-solid.svg" alt="">
+        </button>
+      </div>
+
       <div class="navbar-logo">
         <a class="navbar-logo-link" href="#">
           <img id="navbar-logo-img" src="./images/white-logo.svg" alt="CoNTeX">
         </a>   
       </div>
-      <div class="navbar-collapse">
-        <ul class="navbar-nav">
-          <li class="navbar-item">
-            <a class="navbar-link" href="#">Vault</a>
-          </li>
-          <li class="navbar-item">
-            <a class="navbar-link" href="#">About</a>
-          </li>
-        </ul>
-        <div class="navbar-account">
-          <a class="navbar-account-name" href="#">User</a>   
+
+      <div class="navbar-account">
+        <a class="navbar-account-name" href="#">User</a>   
+        <div class="navbar-acc-sp">
           <a class="navbar-account-picture" href="#">
             <img class="navbar-profile" src="./images/account.png" alt="image">
           </a>   
@@ -49,12 +54,10 @@
           echo htmlspecialchars($file_contents); 
         ?></textarea>
       </div>
-      <pre class="half-width" id="main-preview">
-        <code id="render-text"></code>
-      </pre>
+
+      <pre class="half-width" id="main-preview"><code id="render-text"></code></pre>
     </div>
 
-    <!-- JavaScript for rendering Markdown content -->
     <script src="./scripts/editor.js"></script>
     <script src="./scripts/markdown-parser.js"></script>
   </body>
