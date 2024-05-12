@@ -15,7 +15,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 body {
@@ -39,6 +39,8 @@ body {
         justify-items: center;
 
         .navbar-logo-link {
+            display: flex;
+            align-items: center;
             width: 100px;
             text-decoration: none;
             font: bold 2rem var(--ff);
@@ -46,6 +48,7 @@ body {
         }
 
         #navbar-logo-img {
+            padding: 5px 20px;
             width: 100px;
         }
     }
@@ -81,7 +84,13 @@ body {
             margin: 0 20px;
         }
 
+        .navbar-account-picture {
+            display: flex;
+            align-items: center;
+        }
+
         .navbar-profile {
+            padding: 5px 20px;
             border-radius: 50%;
             height: 40px;
         }
