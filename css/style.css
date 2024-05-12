@@ -13,13 +13,15 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 1px solid red;
 }
 
 body {
     height: 100vh;
-    margin: 0;
-    padding: 0;
     font-family: var(--ff);
+    overflow-y: scroll;
 }
 
 /* Navbar styles */
@@ -76,70 +78,57 @@ body {
             text-decoration: none;
             color: #e2e2e2;
             font-weight: bold;
-            margin-right: 20px;
-            margin-left: 20px;
+            margin: 0 20px;
         }
 
         .navbar-profile {
             border-radius: 50%;
             height: 40px;
         }
-
     }
 }
 
 /* Main container */
 .main {
-    display: flex;
     position: absolute;
-    height: 100%;
+    display: flex;
+    height: 100vh;
     width: 100%;
 
     /* Half-width container */
     .half-width {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
         width: 50%;
-        height: 100%;
     }
 
     /* Main editor styles */
     #main-editor {
-        background-color: #e2e2e2;
+        background-color: var(--colorprimary);
 
         #source-text {
-            font-family: var(--ffcode);
             width: 100%;
             height: 100%;
-            border: none;
-            resize: none;
+            margin: 0;
+            border: 0;
             padding: 20px;
+            display: block;
+            font-family: var(--ffcode);
+            outline: none;
+            resize: none;
             outline: none;
         }
     }
 
     /* Main preview styles */
     #main-preview {
-        background-color: #dddddd;
-        padding: 30px;
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin: 0px;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-
-            ul li::before {
-                content: "\2022";
-                display: inline-block;
-                width: 1em;
-            }
-        }
+        background-color: var(--colorpreview);
+        padding: 20px;
+        text-align: justify;
+        text-justify: inter-word;
+        white-space: pre-wrap;
+        word-break: break-word;
     }
 }

@@ -49,14 +49,13 @@
           echo htmlspecialchars($file_contents); 
         ?></textarea>
       </div>
-      <div class="half-width" id="main-preview">
-        <div id="render-text">
-          
-        </div>
-      </div>
+      <pre class="half-width" id="main-preview">
+        <code id="render-text"></code>
+      </pre>
     </div>
 
     <!-- JavaScript for rendering Markdown content -->
+    <script src="./scripts/editor.js"></script>
     <script src="./scripts/markdown-parser.js"></script>
   </body>
 </html>
