@@ -1,12 +1,18 @@
-// Get elements
-const sourceText = document.getElementById("source-text");
-const renderText = document.getElementById("render-text");
+document.addEventListener('DOMContentLoaded', function() {
+    var sourceText = document.getElementById('source-text');
+    var mainPreview = document.getElementById('main-preview');
 
-// Bind scrolling of source text to preview
-sourceText.addEventListener("scroll", function(event) {
-    renderText.scrollTop = sourceText.scrollTop;
-});
+    // Function to synchronize scrolling
+    function syncScroll(event) {
+        var target = event.target;
+        if (target.id === 'source-text') {
+            mainPreview.scrollTop = target.scrollTop;
+        } else {
+            sourceText.scrollTop = target.scrollTop;
+        }
+    }
 
-renderText.addEventListener("scroll", function(event) {
-    sourceText.scrollTop = renderText.scrollTop;
+    // Add scroll event listeners
+    sourceText.addEventListener('scroll', syncScroll);
+    mainPreview.addEventListener('scroll', syncScroll);
 });
