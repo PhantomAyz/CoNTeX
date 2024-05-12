@@ -15,7 +15,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 
 body {
@@ -33,6 +33,7 @@ body {
     justify-content: space-between;
     padding: 0;
     width: 100vw;
+    height: 45px;
 
     .navbar-logo {
         display: flex;
@@ -87,10 +88,10 @@ body {
         .navbar-account-picture {
             display: flex;
             align-items: center;
+            padding: 5px 20px 5px 0px;
         }
 
         .navbar-profile {
-            padding: 5px 20px;
             border-radius: 50%;
             height: 40px;
         }
@@ -100,21 +101,21 @@ body {
 /* Main container */
 .main {
     position: absolute;
-    display: flex;
-    height: 100vh;
+    height: calc(100vh - 45px);
     width: 100%;
+    display: flex;
+    flex-direction: row;
 
     /* Half-width container */
     .half-width {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        overflow: auto;
+        height: 100%;
         width: 50%;
+        flex: 1;
     }
 
     /* Main editor styles */
     #main-editor {
+        left: 0;
         background-color: var(--colorprimary);
 
         #source-text {
@@ -133,11 +134,13 @@ body {
 
     /* Main preview styles */
     #main-preview {
+        right: 0;
         background-color: var(--colorpreview);
         padding: 20px;
         text-align: justify;
         text-justify: inter-word;
         white-space: pre-wrap;
         word-break: break-word;
+        overflow-x:scroll;
     }
 }
