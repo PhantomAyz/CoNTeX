@@ -47,13 +47,20 @@ body {
 
             .nb-tl-svg {
                 width: 20px;
-                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(92%) contrast(89%);
-
-                :hover {
-                    filter: invert(95%) sepia(0%) saturate(14%) hue-rotate(0deg) brightness(108%) contrast(84%);
-                }
+                filter: invert(100%) brightness(92%) contrast(89%);
             }
 
+            .nb-btn:hover .nb-tl-svg {
+                filter: invert(95%) saturate(14%) brightness(108%) contrast(84%);
+            }
+
+            .nb-btn:active .nb-tl-svg {
+                filter: invert(85%) saturate(14%) brightness(108%) contrast(84%);
+            }
+
+            #folder-icon {
+                width: 25px;
+            }
         }
     }
 
@@ -82,7 +89,7 @@ body {
 
         .navbar-account-name {
             text-decoration: none;
-            color: #e2e2e2;
+            color: var(--colorprimary);
             font-weight: bold;
         }
 
@@ -143,11 +150,12 @@ body {
         right: 0;
         background-color: var(--colorpreview);
         padding: 20px;
-        text-align: justify;
-        text-justify: inter-word;
+        /* text-align: justify; */
+        /* text-justify: inter-word; */
         white-space: pre-wrap;
         word-break: break-word;
         overflow-x: scroll;
         font-size: 14px;
+        text-align: left;
     }
 }

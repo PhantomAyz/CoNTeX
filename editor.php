@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/fonts.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/preview.css" rel="stylesheet">
   </head>
   <body>
     <!-- Navigation bar -->
     <nav class="navbar">
       <div class="navbar-tools">
-        <button class="nb-btn" type="button">
-          <img class="nb-tl-svg" src="images/folder-solid.svg" alt="">
+        <button id="folder-button" class="nb-btn" type="button">
+          <img id="folder-icon" class="nb-tl-svg" src="images/folder-solid.svg" alt="folder">
         </button>
-        <button class="nb-btn" type="button">
-          <img class="nb-tl-svg" src="images/rotate-left-solid.svg" alt="">
+        <button id="undo-button" class="nb-btn" type="button">
+          <img class="nb-tl-svg" src="images/rotate-left-solid.svg" alt="undo">
         </button>
-        <button class="nb-btn" type="button">
-          <img class="nb-tl-svg" src="images/rotate-right-solid.svg" alt="">
+        <button id="redo-button" class="nb-btn" type="button">
+          <img class="nb-tl-svg" src="images/rotate-right-solid.svg" alt="redo">
         </button>
       </div>
 
@@ -31,7 +32,7 @@
       <div class="navbar-account">
         <a class="navbar-account-name" href="#">User</a>   
         <div class="navbar-acc-sp">
-          <a class="navbar-account-picture" href="#">
+          <a class="nagvbar-account-picture" href="#">
             <img class="navbar-profile" src="./images/account.png" alt="image">
           </a>   
         </div>
@@ -55,10 +56,10 @@
         ?></textarea>
       </div>
 
-      <pre class="half-width" id="main-preview"><code id="render-text"></code></pre>
+      <pre id="main-preview" class="half-width"><code id="render-text"></code></pre>
     </div>
 
-    <script src="./scripts/editor.js"></script>
     <script src="./scripts/markdown-parser.js"></script>
+    <script src="./scripts/editor.js"></script>
   </body>
 </html>
