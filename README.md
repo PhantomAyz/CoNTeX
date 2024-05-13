@@ -1,20 +1,32 @@
+![Logo](./images/white-logo.svg)
+
 # CoNTeX
 
-A collaborative note-taking web application which uses Markdown and LaTeX syntax
+Collaborative note-taking web app using Markdown and LaTeX syntax
 
 ## Required
 
-Use PHP as the primary programming language to be used.
+Use PHP as the primary programming language
 
 ## Overall Planned Features
 
-- Login/SignUp user account system
-- Markdown + LaTeX editor
-- Markdown + LaTeX previewer
-- File-tree for Current Notes in the Vault
-- Notes vault sharing for collaborative editing
+1. Login/SignUp user account system
+2. Markdown + LaTeX editor
+3. Markdown + LaTeX previewer
+4. File-tree for Current Notes in the Vault
+5. Notes vault sharing for collaborative editing
 
 ### v0.1.0 Features
 
-- Markdown & LaTeX editor
-- Markdown & LaTeX previewer
+- **textarea** field for editing
+- **previewer** field for rendering parsed Markdown text
+- **previewer** update on **textarea** input
+- Scroll synchronization on editor and previewer
+- Syntax highlighting on editor
+- Auto-pairing for brackets, parenthesis, and other delimiters
+- Markdown parser
+- LaTeX parser
+
+## Sample syntax for Markdown
+
+Sample here
