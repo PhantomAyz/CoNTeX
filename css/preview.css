@@ -54,7 +54,7 @@
     }
 
     ul {
-        margin-bottom: 0;
+        margin-top: 6px;
     }
 
     ul li {
@@ -67,6 +67,7 @@
     }
 
     ol {
+        margin-top: 6px;
         padding-left: 2em;
     }
 

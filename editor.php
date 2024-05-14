@@ -61,5 +61,6 @@
 
     <script src="./scripts/markdown-parser.js"></script>
     <script src="./scripts/editor.js"></script>
+    <script src="//i.upmath.me/latex.js"></script>
   </body>
 </html>
