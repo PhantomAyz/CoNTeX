@@ -33,6 +33,10 @@ const orderedListRegex = /(\n\s*([0-9]+\.)\s.*)+/g;
 const paragraphRegex = /(?:^|\n)([^\n]+)(?=\n|$)/g;
 const checkboxRegex = /-\s*\[\s*(|x|X)\s*\]\s*(.*?)(?=\n|$)/g;
 
+// LaTeX specific regular expressions
+const inlineMathRegex = /\$(.*?)\$/g;
+const blockMathRegex = /\$\$\n?([\s\S]*?)\n?\$\$/g;
+
 // Replacer functions for Markdown
 const codeBlockReplacer = function(fullMatch) {
     return '\n<pre>' + fullMatch + '</pre>';
@@ -103,6 +107,19 @@ const checkboxReplacer = function(fullMatch, tagStart, tagContents) {
     return '<input type="checkbox" disabled' + (isChecked ? ' checked' : '') + ' /> ' + tagContents;
 }
 
+// LaTeX replacer functions
+const inlineMathReplacer = function(fullMatch, formula) {
+    const protocol = location.protocol === "https:" ? "https:" : "http:";
+    const url = protocol + '//i.upmath.me/svg/' + encodeURIComponent('$$' + formula + '$$'); // Pass extended double dollar signs to upmath service
+    return '<img src="' + url + '" alt="' + formula + '" />';
+}
+
+const blockMathReplacer = function(fullMatch, formula) {
+    const protocol = location.protocol === "https:" ? "https:" : "http:";
+    const url = protocol + '//i.upmath.me/svg/' + encodeURIComponent(formula.trim());
+    return '<div style="text-align:center;"><img src="' + url + '" alt="' + formula.trim() + '" /></div>';
+}
+
 // Function to replace regex in a string
 const replaceRegex = function(regex, replacement) {
     return function(str) {
@@ -124,6 +141,10 @@ const replaceUnorderedLists = replaceRegex(unorderedListRegex, unorderedListRepl
 const replaceOrderedLists = replaceRegex(orderedListRegex, orderedListReplacer);
 const replaceParagraphs = replaceRegex(paragraphRegex, paragraphReplacer);
 const replaceCheckboxes = replaceRegex(checkboxRegex, checkboxReplacer);
+
+// LaTeX replacement rules
+const replaceInlineMath = replaceRegex(inlineMathRegex, inlineMathReplacer);
+const replaceBlockMath = replaceRegex(blockMathRegex, blockMathReplacer);
 
 // Fix for tab-indexed code blocks
 const codeBlockFixRegex = /\n(<pre>)((\n|.)*)(<\/pre>)/g;
@@ -148,16 +169,14 @@ const replaceMarkdown = function(str) {
         replaceHeadings(
         replaceLinks(
         replaceImages(
+        replaceInlineMath(
+        replaceBlockMath(
         replaceInlineCodes(
         replaceCodeBlocks(str))
-    )))))))))));
+    )))))))))))));
 }
 
 // Parser for Markdown
 const parseMarkdown = function(str) {
-    // Escape special characters first
-    str = escapeSpecialChars(str);
-    // Then process Markdown
-    return fixCodeBlocks(replaceMarkdown('\n' + str + '\n')).trim();
+    return fixCodeBlocks(replaceMarkdown(escapeSpecialChars(str))).trim();
 }
-
