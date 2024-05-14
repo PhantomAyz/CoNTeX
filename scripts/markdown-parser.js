@@ -1,9 +1,22 @@
-// Function to replace regex in a string
-const replaceRegex = function(regex, replacement) {
-    return function(str) {
-        return str.replace(regex, replacement);
-    }
-}
+// Function to escape special characters to their HTML entities
+const escapeSpecialChars = function(str) {
+    const charMap = {
+        '<': '&lt;',
+        '>': '&gt;',
+        '&': '&amp;',
+        '©': '&copy;',
+        '®': '&reg;',
+        '¥': '&yen;',
+        '£': '&pound;',
+        '¢': '&cent;',
+        '"': '&quot;',
+        "'": '&#39;'
+    };
+
+    return str.replace(/[<>&©®¥£¢"'']/g, function(match) {
+        return charMap[match];
+    });
+};
 
 // Regular expressions for Markdown elements
 const codeBlockRegex = /((\n\t)(.*))+/g;
@@ -84,6 +97,13 @@ const paragraphReplacer = function(fullMatch, tagContents) {
     return '<p>' + tagContents + '</p>';
 }
 
+// Function to replace regex in a string
+const replaceRegex = function(regex, replacement) {
+    return function(str) {
+        return str.replace(regex, replacement);
+    }
+}
+
 // Rules for Markdown parsing
 const replaceCodeBlocks = replaceRegex(codeBlockRegex, codeBlockReplacer);
 const replaceInlineCodes = replaceRegex(inlineCodeRegex, inlineCodeReplacer);
@@ -105,20 +125,31 @@ const codeBlockFixer = function(fullMatch, tagStart, tagContents, lastMatch, tag
     tagContents.split('\n').forEach(line => { lines += line.substring(1) + '\n'; });
     return tagStart + lines + tagEnd;
 }
+
 const fixCodeBlocks = replaceRegex(codeBlockFixRegex, codeBlockFixer);
 
 // Replacement rule order function for Markdown
 const replaceMarkdown = function(str) {
-    return replaceParagraphs(replaceOrderedLists(replaceUnorderedLists(
-        replaceHorizontalRules(replaceBlockquotes(replaceStrikethrough(
-            replaceBoldItalics(replaceHeadings(replaceLinks(replaceImages(
-                replaceInlineCodes(replaceCodeBlocks(str))
-            ))))
-        )))
-    )));
+    return replaceParagraphs(
+        replaceOrderedLists(
+        replaceUnorderedLists(
+        replaceHorizontalRules(
+        replaceBlockquotes(
+        replaceStrikethrough(
+        replaceBoldItalics(
+        replaceHeadings(
+        replaceLinks(
+        replaceImages(
+        replaceInlineCodes(
+        replaceCodeBlocks(str))
+    ))))))))));
 }
 
 // Parser for Markdown
 const parseMarkdown = function(str) {
+    // Escape special characters first
+    str = escapeSpecialChars(str);
+    // Then process Markdown
     return fixCodeBlocks(replaceMarkdown('\n' + str + '\n')).trim();
 }
+
