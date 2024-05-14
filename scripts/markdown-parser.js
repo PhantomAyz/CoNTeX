@@ -30,7 +30,7 @@ const blockquoteRegex = /\n(&gt;|\>)(.*)/g;
 const horizontalRuleRegex = /\n((\-{3,})|(={3,}))/g;
 const unorderedListRegex = /(\n\s*(\-|\+)\s.*)+/g;
 const orderedListRegex = /(\n\s*([0-9]+\.)\s.*)+/g;
-const paragraphRegex = /\n+(?!<pre>)(?!<h)(?!<ul>)(?!<blockquote)(?!<hr)(?!\t)([^\n]+)\n/g;
+const paragraphRegex = /(?:^|\n)([^\n]+)(?=\n|$)/g;
 const checkboxRegex = /-\s*\[\s*(|x|X)\s*\]\s*(.*?)(?=\n|$)/g;
 
 // Replacer functions for Markdown
@@ -95,7 +95,7 @@ const orderedListReplacer = function(fullMatch) {
 }
 
 const paragraphReplacer = function(fullMatch, tagContents) {
-    return '<p>' + tagContents + '</p>';
+    return '<p>' + tagContents.trim() + '</p>';
 }
 
 const checkboxReplacer = function(fullMatch, tagStart, tagContents) {
