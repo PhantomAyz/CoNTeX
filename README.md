@@ -18,14 +18,14 @@ Use PHP as the primary programming language
 
 ### v0.1.0 Features
 
-- **textarea** field for editing
-- **previewer** field for rendering parsed Markdown text
-- **previewer** update on **textarea** input
-- Scroll synchronization on editor and previewer
-- Syntax highlighting on editor
-- Auto-pairing for brackets, parenthesis, and other delimiters
-- Markdown parser
-- LaTeX parser
+- [x] **<textarea>** field for editing
+- [x] **<previewer>** field for rendering parsed Markdown text
+- [x] **<previewer>** update on **<textarea>** input
+- [x] Scroll synchronization on editor and previewer
+- [ ] Syntax highlighting on editor
+- [ ] Auto-pairing for brackets, parenthesis, and other delimiters
+- [x] Markdown parser
+- [ ] LaTeX parser
 
 ## Sample syntax for Markdown
 

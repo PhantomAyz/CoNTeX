@@ -31,6 +31,7 @@ const horizontalRuleRegex = /\n((\-{3,})|(={3,}))/g;
 const unorderedListRegex = /(\n\s*(\-|\+)\s.*)+/g;
 const orderedListRegex = /(\n\s*([0-9]+\.)\s.*)+/g;
 const paragraphRegex = /\n+(?!<pre>)(?!<h)(?!<ul>)(?!<blockquote)(?!<hr)(?!\t)([^\n]+)\n/g;
+const checkboxRegex = /-\s*\[\s*(|x|X)\s*\]\s*(.*?)(?=\n|$)/g;
 
 // Replacer functions for Markdown
 const codeBlockReplacer = function(fullMatch) {
@@ -97,6 +98,11 @@ const paragraphReplacer = function(fullMatch, tagContents) {
     return '<p>' + tagContents + '</p>';
 }
 
+const checkboxReplacer = function(fullMatch, tagStart, tagContents) {
+    const isChecked = tagStart.trim().toLowerCase() === 'x';
+    return '<input type="checkbox" disabled' + (isChecked ? ' checked' : '') + ' /> ' + tagContents;
+}
+
 // Function to replace regex in a string
 const replaceRegex = function(regex, replacement) {
     return function(str) {
@@ -117,6 +123,7 @@ const replaceHorizontalRules = replaceRegex(horizontalRuleRegex, horizontalRuleR
 const replaceUnorderedLists = replaceRegex(unorderedListRegex, unorderedListReplacer);
 const replaceOrderedLists = replaceRegex(orderedListRegex, orderedListReplacer);
 const replaceParagraphs = replaceRegex(paragraphRegex, paragraphReplacer);
+const replaceCheckboxes = replaceRegex(checkboxRegex, checkboxReplacer);
 
 // Fix for tab-indexed code blocks
 const codeBlockFixRegex = /\n(<pre>)((\n|.)*)(<\/pre>)/g;
@@ -133,6 +140,7 @@ const replaceMarkdown = function(str) {
     return replaceParagraphs(
         replaceOrderedLists(
         replaceUnorderedLists(
+        replaceCheckboxes(
         replaceHorizontalRules(
         replaceBlockquotes(
         replaceStrikethrough(
@@ -142,7 +150,7 @@ const replaceMarkdown = function(str) {
         replaceImages(
         replaceInlineCodes(
         replaceCodeBlocks(str))
-    ))))))))));
+    )))))))))));
 }
 
 // Parser for Markdown
