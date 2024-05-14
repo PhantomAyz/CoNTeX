@@ -29,7 +29,7 @@ Use PHP as the primary programming language
 - [ ] Syntax highlighting on editor
 - [ ] Auto-pairing for brackets, parenthesis, and other delimiters
 - [x] Markdown parser
-- [ ] LaTeX parser
+- [x LaTeX parser
 
 ## Sample LaTeX + Markdown
 
@@ -37,15 +37,15 @@ The **Naive Bayes** is a well-known probabilistic-supervised machine learning al
 
 A thing to discuss here first is the root of its concept, the **Bayes theorem**, which provides a way of computing posterior probability $P(h|d)$ from $P(h)$, $P(d)$ and $P(d|h)$, where $h$ is the hypothesis or belief we hold and $d$ as some body of data. Together, we could assume that this is the probability of a hypothesis being true given some data. It could also provide a way to update how strongly the belief is held as new data becomes available.
 
-$$\begin{equation*} P(h|d) = \frac{P(d|h) \cdot P(h)}{P(d)} \end{equation}$$
+$$
+\begin{equation}
+    P(h|d) = \frac{P(d|h) \cdot P(h)}{P(d)} 
+\end{equation}$$
 
 In plain English version in same layout.
 
-$$\begin{equation*} \text{posterior} = \frac{\text{prior} \cdot \text{likelihood}}{\text{evidence}} \end{equation}$$
-
-
 $$
-\begin{equation*}
-    P(h|d) = \frac{P(d|h) \cdot P(h)}{P(d)} 
-\end{equation}
+\begin{equation} 
+    \text{posterior} = \frac{\text{prior} \cdot 
+\text{likelihood}}{\text{evidence}} \end{equation}
 $$

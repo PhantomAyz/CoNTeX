@@ -4,16 +4,11 @@ const escapeSpecialChars = function(str) {
         '<': '&lt;',
         '>': '&gt;',
         '&': '&amp;',
-        '©': '&copy;',
-        '®': '&reg;',
-        '¥': '&yen;',
-        '£': '&pound;',
-        '¢': '&cent;',
         '"': '&quot;',
         "'": '&#39;'
     };
 
-    return str.replace(/[<>&©®¥£¢"'']/g, function(match) {
+    return str.replace(/[<>&"'']/g, function(match) {
         return charMap[match];
     });
 };
@@ -111,7 +106,7 @@ const checkboxReplacer = function(fullMatch, tagStart, tagContents) {
 const inlineMathReplacer = function(fullMatch, formula) {
     const protocol = location.protocol === "https:" ? "https:" : "http:";
     const url = protocol + '//i.upmath.me/svg/' + encodeURIComponent('$$' + formula + '$$'); // Pass extended double dollar signs to upmath service
-    return '<img src="' + url + '" alt="' + formula + '" />';
+    return '<img style="position: relative; top: 1px;" src="' + url + '" alt="' + formula + '" />';
 }
 
 const blockMathReplacer = function(fullMatch, formula) {
