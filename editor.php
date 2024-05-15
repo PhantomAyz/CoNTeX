@@ -59,7 +59,7 @@
       <pre id="main-preview" class="half-width"><code id="render-text"></code></pre>
     </div>
 
-    <script src="./scripts/markdown-parser.js"></script>
+    <script src="./scripts/parser.js"></script>
     <script src="./scripts/editor.js"></script>
     <script src="//i.upmath.me/latex.js"></script>
   </body>

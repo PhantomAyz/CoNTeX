@@ -1,4 +1,4 @@
-![Logo](./images/white-logo.svg)
+![Logo](./images/black-logo.svg)
 
 # CoNTeX
 
@@ -22,14 +22,14 @@ Use PHP as the primary programming language
 
 ### v0.1.0 Features
 
-- [x] **<textarea>** field for editing
-- [x] **<previewer>** field for rendering parsed Markdown text
-- [x] **<previewer>** update on **<textarea>** input
-- [x] Scroll synchronization on **<textarea>** and **<previewer>**
+- [x] `<textarea>` field for editing
+- [x] `<previewer>` field for rendering parsed Markdown text
+- [x] `<previewer>` update on `<textarea>` input
+- [x] Scroll synchronization on `<textarea>` and `<previewer>`
 - [ ] Syntax highlighting on editor
 - [ ] Auto-pairing for brackets, parenthesis, and other delimiters
 - [x] Markdown parser
-- [x LaTeX parser
+- [x] $\LaTeX$ parser
 
 ## Sample LaTeX + Markdown
 
@@ -40,7 +40,8 @@ A thing to discuss here first is the root of its concept, the **Bayes theorem**,
 $$
 \begin{equation}
     P(h|d) = \frac{P(d|h) \cdot P(h)}{P(d)} 
-\end{equation}$$
+\end{equation}
+$$
 
 In plain English version in same layout.
 
@@ -48,4 +49,18 @@ $$
 \begin{equation} 
     \text{posterior} = \frac{\text{prior} \cdot 
 \text{likelihood}}{\text{evidence}} \end{equation}
+$$
+
+
+| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+
+
+$$
+\begin{tabular}{ c  c  c }
+    Header 1 & Header 2 & Header 3\\
+    Cell 1 & Cell 2 & Cell 3\\
+\end{tabular}
 $$
