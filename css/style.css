@@ -21,7 +21,6 @@
 body {
     height: 100vh;
     font-family: var(--ff);
-    overflow-y: scroll;
 }
 
 /* Navbar styles */
@@ -157,5 +156,6 @@ body {
         overflow-x: scroll;
         font-size: 15px;
         text-align: left;
+        overflow-x: hidden;
     }
 }
