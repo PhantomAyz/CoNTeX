@@ -34,7 +34,7 @@ const codeBlockRegex = /((\n\t)(.*))+/g;
 const inlineCodeRegex = /(`)(.*?)\1/g;
 const imageRegex = /!\[([^\[]+)\]\(([^\)]+)\)/g;
 const linkRegex = /\[([^\[]+)\]\(([^\)]+)\)/g;
-const headingRegex = /\n(#+\s*)(.*)/g;
+const headingRegex = /(^|\n)(#+\s*)(.*)/g;
 const boldItalicsRegex = /(\*{1,2})(.*?)\1/g;
 const strikethroughRegex = /(\~\~)(.*?)\1/g;
 const blockquoteRegex = /\n(&gt;|\>)(.*)/g;
@@ -66,8 +66,8 @@ const linkReplacer = function(fullMatch, tagTitle, tagURL) {
     return '<a href="' + tagURL + '">' + tagTitle + '</a>';
 }
 
-const headingReplacer = function(fullMatch, tagStart, tagContents) {
-    return '\n<h' + tagStart.trim().length + '>' + tagContents + '</h' + tagStart.trim().length + '>';
+const headingReplacer = function(fullMatch, lineStart, tagStart, tagContents) {
+    return `${lineStart}<h${tagStart.trim().length}>${tagContents}</h${tagStart.trim().length}>`;
 }
 
 const boldItalicsReplacer = function(fullMatch, tagStart, tagContents) {
