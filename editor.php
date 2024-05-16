@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>CoNTeX: Collaborative Note-taking in Markdown & LaTeX</title>
+    <link rel="icon" href="./images/white-logo.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/fonts.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">

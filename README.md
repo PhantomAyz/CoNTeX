@@ -64,3 +64,18 @@ $$
     Cell 1 & Cell 2 & Cell 3\\
 \end{tabular}
 $$
+
+
+One can use matrices:
+
+$$T^{\mu\nu}=\begin{pmatrix}
+\varepsilon&0&0&0\\
+0&\varepsilon/3&0&0\\
+0&0&\varepsilon/3&0\\
+0&0&0&\varepsilon/3
+\end{pmatrix},$$
+
+integrals:
+
+$$P_\omega={n_\omega\over 2}\hbar\omega\,{1+R\over 1-v^2}\int\limits_{-1}^{1}dx\,(x-v)|x-v|,$$
+
