@@ -157,13 +157,13 @@ const tableReplacer = function(fullMatch) {
 const inlineMathReplacer = function(fullMatch, formula) {
     const protocol = location.protocol === "https:" ? "https:" : "http:";
     const url = protocol + '//i.upmath.me/svg/' + encodeURIComponent('$$' + formula + '$$');
-    return '<img style="vertical-align: middle;" src="' + url + '" alt="' + formula + '" />';
+    return '<img class="latex-code" style="vertical-align: middle;" src="' + url + '" alt="' + formula + '" />';
 }
 
 const blockMathReplacer = function(fullMatch, formula) {
     const protocol = location.protocol === "https:" ? "https:" : "http:";
     const url = protocol + '//i.upmath.me/svg/' + encodeURIComponent(formula.trim());
-    return '<div style="text-align:center;"><img src="' + url + '" alt="' + formula.trim() + '" /></div>';
+    return '<div class="latex-code" style="text-align:center;"><img src="' + url + '" alt="' + formula.trim() + '" /></div>';
 }
 
 // Function to replace regex in a string

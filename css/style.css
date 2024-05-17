@@ -1,8 +1,8 @@
 :root {
-    --colorprimary: #f2f2f2;
-    --colorsecondary: #2b2b2b;
+    --colorprimary: #ffffff;
+    --colorsecondary: #0a0e14;
     --coloraccent: #555555;
-    --colorpreview: #dddddd;
+    --colorpreview: #182b31;
     --ff: 'Roboto Mono', sans-serif;
     --ffcode: 'JetBrains Mono', monospace;
     --h1: bold 54px/64px var(--ff);
@@ -129,7 +129,6 @@ body {
     /* Main editor styles */
     #main-editor {
         left: 0;
-        background-color: var(--colorprimary);
 
         #source-text {
             width: 100%;
@@ -143,6 +142,8 @@ body {
             resize: none;
             outline: none;
             font-size: 15px;
+            background-color: var(--colorpreview);
+            color: var(--colorprimary);
         }
     }
 
@@ -157,5 +158,9 @@ body {
         font-size: 15px;
         text-align: left;
         overflow-x: hidden;
+
+        #render-text {
+            color: var(--colorprimary);
+        }
     }
 }
