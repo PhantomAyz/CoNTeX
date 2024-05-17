@@ -26,7 +26,7 @@
 
       <div class="navbar-logo">
         <a class="navbar-logo-link" href="#">
-          <img id="navbar-logo-img" src="./images/white-logo.svg" alt="CoNTeX">
+          <!-- <img id="navbar-logo-img" src="./images/white-logo.svg" alt="CoNTeX"> -->
         </a>   
       </div>
 

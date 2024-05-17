@@ -1,5 +1,3 @@
-![Logo](./images/black-logo.svg)
-
 # CoNTeX
 
 Collaborative note-taking web app with Markdown and $\LaTeX$ syntax
@@ -66,7 +64,7 @@ $$
 $$
 
 
-One can use matrices:
+Sample matrices:
 
 $$T^{\mu\nu}=\begin{pmatrix}
 \varepsilon&0&0&0\\
@@ -75,7 +73,7 @@ $$T^{\mu\nu}=\begin{pmatrix}
 0&0&0&\varepsilon/3
 \end{pmatrix},$$
 
-integrals:
+sample integrals:
 
 $$P_\omega={n_\omega\over 2}\hbar\omega\,{1+R\over 1-v^2}\int\limits_{-1}^{1}dx\,(x-v)|x-v|,$$
 
