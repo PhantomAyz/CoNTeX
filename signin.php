@@ -48,8 +48,6 @@
 
   <div class="container">
     <div class="login__content">
-      <img src="images/NavBar_design.png" alt="login image" class="login__img">
-
       <form action="" class="login__form">
         <div>
           <h1 class="login__title">

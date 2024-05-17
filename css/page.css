@@ -682,6 +682,7 @@ img {
 }
 
 .login__content {
+    background: var(--3-color);
     position: relative;
     height: 100vh;
     align-items: center;
