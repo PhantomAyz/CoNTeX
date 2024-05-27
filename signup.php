@@ -28,13 +28,13 @@
       </div>
       <ul class="navbar__menu">
         <li class="navbar__item">
-          <a href="/" class="navbar__links">Home</a>
+          <a href="home.php" class="navbar__links">Home</a>
         </li>
         <li class="navbar__item">
-          <a href="index.html#tech" class="navbar__links">Tech</a>
+          <a href="home.php#tech" class="navbar__links">Tech</a>
         </li>
         <li class="navbar__item">
-          <a href="index.html#About_Us" class="navbar__links">About Us</a>
+          <a href="home.php#About_Us" class="navbar__links">About Us</a>
         </li>
         <li class="navbar__btn">
           <a href="signin.php" class="button">Log In</a>
@@ -63,12 +63,12 @@
           <div class="login__inputs">
             <div>
               <label for="input-email" class="login__label">First Name</label>
-              <input type="email" placeholder="Enter your First Name" required class="login__input" id="input-first-name">
+              <input placeholder="Enter your First Name" required class="login__input" id="input-first-name">
             </div>
 
             <div>
               <label for="input-email" class="login__label">Last Name</label>
-              <input type="email" placeholder="Enter your Last Name" required class="login__input" id="input-last-name">
+              <input placeholder="Enter your Last Name" required class="login__input" id="input-last-name">
             </div>
 
             <div>

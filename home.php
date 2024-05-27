@@ -24,7 +24,7 @@
       </div>
       <ul class="navbar__menu">
         <li class="navbar__item">
-          <a href="/" class="navbar__links">Home</a>
+          <a href="home.php" class="navbar__links">Home</a>
         </li>
         <li class="navbar__item">
           <a href="#tech" class="navbar__links">Tech</a>
